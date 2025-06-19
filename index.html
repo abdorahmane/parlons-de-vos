@@ -14,6 +14,65 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://abdorahmane.github.io/parlons-de-vos/index.html" />
         <meta property="og:site_name" content="Parlons de vos chiffres" />
+  <style>
+    /* ----- Reset & boîte ----- */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: Arial, sans-serif; line-height:1.5; padding:20px; }
+
+    /* ----- Galerie 3 colonnes ----- */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gallery a {
+      flex: 1 1 calc(33.333% - 10px);
+      display: block;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 800px) {
+      .gallery a { flex: 1 1 calc(50% - 10px); }
+    }
+    @media (max-width: 600px) {
+      .gallery a { flex: 1 1 100%; }
+    }
+
+    /* ----- Blocs texte/image ----- */
+    .block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .block img {
+      width: 100%;
+      max-width:400px;
+      height:auto;
+      border-radius:4px;
+    }
+    .block .text {
+      flex:1;
+    }
+    @media (max-width: 768px) {
+      .block { flex-direction: column; }
+      .block:nth-child(even) { flex-direction: column; }
+      .block img { max-width:100%; }
+    }
+
+    /* ----- Titres ----- */
+    .block h2 {
+      margin-bottom:10px;
+      font-size:1.8rem;
+      color:#333;
+    }
+  </style>
     <style>
     .hero-carousel {
       height: 90vh;
@@ -111,7 +170,39 @@
         </div>
       </div>
     </div>
-  </div
+  </div>
+  
+  <!-- Galerie -->
+  <div class="gallery">
+    <a href="https://www.jepilotemonentreprise.com/wp-content/uploads/2021/04/quels-differents-types-comptabilite-1.jpg" target="_blank">
+      <img src="https://www.jepilotemonentreprise.com/wp-content/uploads/2021/04/quels-differents-types-comptabilite-1.jpg" alt="Image 1">
+    </a>
+    <a href="https://lic-informatique.fr/wp-content/uploads/2014/07/photodune-2714142-accounting-m1.jpg" target="_blank">
+      <img src="https://lic-informatique.fr/wp-content/uploads/2014/07/photodune-2714142-accounting-m1.jpg" alt="Image 2">
+    </a>
+    <a href="https://img-0.journaldunet.com/dpcor6o1Kbd7PPDyzID4brkqpp4=/1280x/smart/576fef7754ec4fd5be0ae8e905f2d986/ccmcms-jdn/10817274.jpg" target="_blank">
+      <img src="https://img-0.journaldunet.com/dpcor6o1Kbd7PPDyzID4brkqpp4=/1280x/smart/576fef7754ec4fd5be0ae8e905f2d986/ccmcms-jdn/10817274.jpg" alt="Image 3">
+    </a>
+  </div>
+
+  <!-- Bloc 1 -->
+  <div class="block">
+    <img src="https://webfiles.luxweb.com/upload/cms/265/large/9665bd24-80ba-40ab-8514-b853da6c52c9.jpg" alt="Créez votre entreprise">
+    <div class="text">
+      <h2>Concentrez-vous sur votre métier, nous occupons du reste</h2>
+      <p>Nous accompagnons les entreprises dans leur comptabilité, leur paie et leur conformité fiscale, afin qu'elles puissent se développer en toute confiance.</p>
+    </div>
+  </div>
+
+  <!-- Bloc 2 -->
+  <div class="block">
+    <img src="https://www.oserentreprendre.be/wp-content/uploads/2021/01/comptabilit%C3%A9-dentreprise-2.jpg" alt="Service de conseil">
+    <div class="text">
+      <h2>C’est ça être bien accompagné</h2>
+      <p>Simplifiez votre comptabilité, prenez les bonnes décisions et libérez-vous de toute charge mentale.</p>
+    </div>
+  </div>
+  
     
   <footer>
     <p>&copy; Parlons de vos chiffres - Tous droits réservés.</p>
