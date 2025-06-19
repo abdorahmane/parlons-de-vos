@@ -46,6 +46,23 @@ footer {
   text-align: center;
 }
 
+/* Texte plus grand sur tablette/desktop */
+@media (min-width: 768px) {
+  .section-title { font-size: 3rem; }
+  body { font-size: 1rem; }
+}
+
+/* Cacher certains éléments sur mobile */
+@media (max-width: 576px) {
+  .navbar .navbar-nav { text-align: center; }
+  .gallery { flex-direction: column; }
+}
+
+img, .map-container, .hero-carousel {
+  max-width: 100%;
+  height: auto;
+}
+
 
     /* ----- Blocs texte/image ----- */
     .block {
