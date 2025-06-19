@@ -93,4 +93,27 @@ footer {
       padding: 20px;
       border-radius: 10px;
     }
+
+
+    /* ----- Galerie 3 colonnes ----- */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gallery a {
+      flex: 1 1 calc(33.333% - 10px);
+      display: block;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 800px) {
+      .gallery a { flex: 1 1 calc(50% - 10px); }
+    }
+    @media (max-width: 600px) {
+      .gallery a { flex: 1 1 100%; }
+    }
   
