@@ -58,7 +58,33 @@
     <p>
 <br></br> <br></br> <br></br>
 
-    </p>
+    </p
+    <form action="https://formspree.io/f/mnqedvle" method="POST">
+  <!-- Envoi du courriel à votre adresse principale -->
+  <!-- Ex. d’ajout en copie si nécessaire -->
+  <input type="hidden" name="_cc" value="parlonsdevoschiffres@gmail.com" /> 
+
+  <!-- Utilise automatiquement l'adresse du visiteur pour la fonction "Répondre" -->
+  <input type="hidden" name="_replyto" value="" />
+
+  <!-- Définit le sujet de l'email reçu -->
+  <input type="hidden" name="_subject" value="Message depuis le site Parlons de vos chiffres" />
+
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Votre nom" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Votre message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
 
       <!-- Carte responsive centrée sur l’emplacement -->
     <h2>Où sommes-nous ?</h2>
