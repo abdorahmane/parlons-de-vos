@@ -1,206 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF‑8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre Équipe - Parlons de vos chiffres</title>
+  <title>Notre Équipe – Parlons de vos chiffres</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; background: #f8f8f8; }
-
-    section { padding: 60px 20px; text-align: center; }
-    .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #222; }
+    body { font-family: 'Roboto', sans-serif; background: #f8f8f8; margin: 0; }
+    .logo { max-width: 200px; margin: 20px auto; display: block; }
+    .navbar { border-bottom: 1px solid #ddd; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #222; margin-bottom: 40px; }
+    @media (min-width:768px) { .section-title { font-size: 2.5rem; } }
 
     .team-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
       gap: 30px;
-      justify-items: center;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
+      padding: 60px 20px;
     }
-
     .profile {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      width: 100%;
-      max-width: 320px;
+      background: #fff; border-radius: 12px;
+      overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform .3s, box-shadow .3s;
     }
     .profile:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
     .profile img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
+      width:100%; object-fit: cover; display: block;
     }
-    .profile-content {
-      padding: 20px;
-    }
-    .profile h3 {
-      margin-top: 15px;
-      font-size: 1.4rem;
-      color: #111;
-    }
-    .profile p.role {
-      margin: 8px 0;
-      font-style: italic;
-      color: #777;
-    }
-    .profile p.bio {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.4;
-    }
-  </style>
-  <style>
-    /* ----- Reset & boîte ----- */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: Arial, sans-serif; line-height:1.5; padding:20px; }
+    .profile-content { padding: 20px; text-align: center; }
+    .profile h3 { font-size: 1.4rem; margin-top: 15px; color: #111; }
+    .role { font-style: italic; color: #777; margin: 8px 0; }
+    .bio { color: #555; font-size: .95rem; line-height: 1.4; }
 
-    /* ----- Galerie 3 colonnes ----- */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .gallery a {
-      flex: 1 1 calc(33.333% - 10px);
-      display: block;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    @media (max-width: 800px) {
-      .gallery a { flex: 1 1 calc(50% - 10px); }
-    }
-    @media (max-width: 600px) {
-      .gallery a { flex: 1 1 100%; }
-    }
+    .block { padding: 40px 20px; display: flex; flex-wrap: wrap; align-items: center; background: #fff; margin-bottom: 20px; }
+    .block:nth-child(even) { flex-direction: row-reverse; }
+    .block img { width:100%; max-width:400px; border-radius:4px; }
+    .block .text { flex:1; padding: 20px; }
+    @media (max-width:768px) { .block { flex-direction:column; } }
 
-    /* ----- Blocs texte/image ----- */
-    .block {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 40px 0;
-    }
-    .block:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-    .block img {
-      width: 100%;
-      max-width:400px;
-      height:auto;
-      border-radius:4px;
-    }
-    .block .text {
-      flex:1;
-    }
-    @media (max-width: 768px) {
-      .block { flex-direction: column; }
-      .block:nth-child(even) { flex-direction: column; }
-      .block img { max-width:100%; }
-    }
-
-    /* ----- Titres ----- */
-    .block h2 {
-      margin-bottom:10px;
-      font-size:1.8rem;
-      color:#333;
-    }
+    footer { text-align:center; padding:30px; background:#111; color:#fff; }
   </style>
 </head>
 <body>
-  <img src="logo.PNG" alt="Parlons de vos chiffres" class="logo" />
-  <nav class="navbar navbar-expand-lg navbar-light">
+
+  <img src="logo.PNG" alt="Parlons de vos chiffres" class="logo">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <a class="navbar-brand" href="equipe.html">Équipe</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <a class="navbar-brand" href="#">Équipe</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item active"><a class="nav-link" href="equipe.html">Équipe</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#">Équipe</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <p>
 
-    
-  </p>
+  <section>
+    <h1 class="section-title text-center">Notre Équipe</h1>
+    <div class="team-container">
+      <div class="profile">
+        <img src="equipe1.jpg" alt="Med Imad El Ouadrassi">
+        <div class="profile-content">
+          <h3>Med Imad El Ouadrassi</h3>
+          <p class="role">Associé</p>
+          <p class="bio">Ingénieur en finance & comptabilité, assistant manager chez Fidecom, 6 ans d'expérience.</p>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="equipe3.PNG" alt="Hamada El Mzandi">
+        <div class="profile-content">
+          <h3>Hamada El Mzandi</h3>
+          <p class="role">Associé</p>
+          <p class="bio">Expert en stratégie financière et gestion des risques.</p>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="equipe2.jpg" alt="Khalid Loubaris">
+        <div class="profile-content">
+          <h3>Khalid Loubaris</h3>
+          <p class="role">Associé</p>
+          <p class="bio">Spécialiste en audit et conseil, avec plus de 8 ans d’expérience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p><br><br></p>
 
-<section>
-  <h1 class="section-title">Notre Équipe</h1>
+  <section>
   
-  <div class="team-container">
-    <div class="profile">
-      <img src="equipe1.jpg" alt="Med Imad El Ouadrassi">
-      <div class="profile-content">
-        <h3>Med Imad El Ouadrassi</h3>
-        <p class="role">Associé</p>
-        <p class="bio">Ingénieur en finance et comptabilité, assistant manager chez Fidecom, 6 ans d'expérience.</p>
-      </div>
-    </div>
-    <div class="profile">
-      <img src="equipe3.PNG" alt="Hamada El Mzandi">
-      <div class="profile-content">
-        <h3>Hamada El Mzandi</h3>
-        <p class="role">Associé</p>
-        <p class="bio">Expert en stratégie financière et gestion des risques.</p>
-      </div>
-    </div>
-    <div class="profile">
-      <img src="equipe2.jpg" alt="Khalid Loubaris">
-      <div class="profile-content">
-        <h3>Khalid Loubaris</h3>
-        <p class="role">Associé</p>
-        <p class="bio">Spécialiste en audit et conseil, avec plus de 8 ans de pratique.</p>
-      </div>
-    </div>
-    <br> <br>
-  </div>
+   <section class="container py-5">
+  <h2 class="section-title text-center">Une prestation intellectuelle, globale</h2>
+  <p class="text-center">À l’écoute de vos problématiques, FIREC & ASSOCIES se positionne en partenaire pour accompagner les entreprises, au Maroc comme à l’étranger.</p>
 </section>
-  <p>
-    <br></br>
-</p>
     <div class="block">
-    <div class="text">
-      <h2>Une prestation intellectuelle, globale</h2>
-  <p> A l’écoute de leurs problématiques et avec une connaissance approfondie des métiers de ses clients, FIREC & ASSOCIES se positionne en réel partenaire du chef d’entreprise et des différentes directions pour les accompagner dans toutes les phases de leur développement, tant au Maroc qu’à l’étranger.</p>
+      <div class="text">
+        <h2></h2>
+        <p>À l’écoute de vos problématiques, FIREC & ASSOCIES se positionne en partenaire pour accompagner les entreprises, au Maroc comme à l’étranger.</p>
+      </div>
     </div>
-  </div>
-  <p>
-    <br></br>  <br></br>
-  </p>
-
-    <!-- Bloc 1 -->
-  <div class="block">
-    <img src="https://formation-cfr.fr/wp-content/uploads/2021/05/conseil-gestion-2048x939.jpg" alt="Pourquoi choisir nos services ?">
-    <div class="text">
-      <h2>Pourquoi choisir nos services ?</h2>
-      <p>Notre bureaux de comptable offre aux entreprises, locales et investisseurs étrangers, une gamme complète de services l'expertise comptable, le conseil juridique et fiscal ainsi que l'assistance aux transactions avec les meilleurs prix !</p>
+	<p><br><br></p>
+    <div class="block">
+      <img src="https://formation-cfr.fr/wp-content/uploads/2021/05/conseil-gestion-2048x939.jpg" alt="Pourquoi choisir nos services ?">
+      <div class="text">
+        <h2>Pourquoi choisir nos services ?</h2>
+        <p>Notre cabinet offre une gamme complète (comptable, juridique, fiscal, transactions) au meilleur prix.</p>
+      </div>
     </div>
-  </div>
-     
-  
-
-   
+  </section>
 
   <footer>
-    <p> Parlons de vos chiffres - Tous droits réservés.</p>
+    <p>&copy; Parlons de vos chiffres – Tous droits réservés.</p>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
