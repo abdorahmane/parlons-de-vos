@@ -47,8 +47,7 @@
 </nav>
 
 <!-- Hero Carousel -->
-<div id="carouselHero" class="carousel slide" data-ride="carousel" data-interval="4000" data-touch="true">
-
+<div id="carouselHero" class="carousel slide hero-carousel" data-ride="carousel" data-interval="4000" data-touch="true">
   <div class="carousel-inner">
     <div class="carousel-item active" style="background-image:url('https://uploads-ssl.webflow.com/5ad0b42419637c947bdb0343/5c6db5ca0bcf6ee48150dcab_iStock-862152778.jpg')">
       <div class="carousel-caption d-none d-md-block">
@@ -123,14 +122,6 @@
 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
-<script>
-$('#carouselHero').carousel({ interval:3500, pause:'hover' });
-$('#carouselHero').swipe({
-  swipeLeft(){ $(this).carousel('next'); },
-  swipeRight(){ $(this).carousel('prev'); },
-  threshold:75
-});
-</script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
