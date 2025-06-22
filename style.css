@@ -97,11 +97,11 @@ img, .map-container, .hero-carousel {
     }
     
     .hero-carousel {
-      height: 90vh;
+      height: 70vh;
       overflow: hidden;
     }
     .hero-carousel .carousel-item {
-      height: 90vh;
+      height: 70vh;
       background-size: cover;
       background-position: center;
     }
