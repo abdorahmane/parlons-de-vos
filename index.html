@@ -47,7 +47,8 @@
 </nav>
 
 <!-- Hero Carousel -->
-<div id="carouselHero" class="carousel slide hero-carousel" data-ride="carousel" data-interval="4000">
+<div id="carouselHero" class="carousel slide" data-ride="carousel" data-interval="4000" data-touch="true">
+
   <div class="carousel-inner">
     <div class="carousel-item active" style="background-image:url('https://uploads-ssl.webflow.com/5ad0b42419637c947bdb0343/5c6db5ca0bcf6ee48150dcab_iStock-862152778.jpg')">
       <div class="carousel-caption d-none d-md-block">
@@ -134,5 +135,16 @@ $('#carouselHero').swipe({
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const c = document.querySelector('#carouselHero');
+    new bootstrap.Carousel(c);
+    $(c).swipe({
+      swipeLeft:  () => $(c).carousel('next'),
+      swipeRight: () => $(c).carousel('prev'),
+      threshold: 75
+    });
+  });
+</script>
 </body>
 </html>
